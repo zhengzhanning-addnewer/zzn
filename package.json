@@ -1,22 +1,14 @@
 {
   "name": "zzn",
   "version": "1.0.0",
-  "description": "zzn",
+  "description": "description",
   "main": "index.js",
   "scripts": {
-    "test": "npm run dev"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zhengzhanning-addnewer/zzn.git"
+    "test": "dev"
   },
   "keywords": [
-    "zzn"
+    "keywords"
   ],
   "author": "zzn",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zhengzhanning-addnewer/zzn/issues"
-  },
-  "homepage": "https://github.com/zhengzhanning-addnewer/zzn#readme"
+  "license": "ISC"
 }
