@@ -13,7 +13,7 @@ var config = {
         //publicPath: path.join (__dirname+ "public")
     },
     entry:{
-        comm: ['jquery','angular','angular-ui-router','angular-animate','moment'],
+     /*   comm: ['jquery','angular','angular-ui-router','angular-animate','moment'],*/
         //app: ['webpack/hot/dev-server', path.join(__dirname, '/src/js/app.js')]
         app: './src/js/app.js'
     },
@@ -72,10 +72,10 @@ var config = {
     },
     devtool: 'eval',
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
+        /*new webpack.optimize.CommonsChunkPlugin({
             name:'comm',
             filename:'comm.js'
-        }),
+        }),*/
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
@@ -86,42 +86,11 @@ var config = {
             template: './views/index.html',
             filename: './index.html',
             inject: true
-        }),
-        new webpack.DefinePlugin({
-            DEV: true,
         })
     ],
     devServer: {
         port: 3131,
         contentBase: __dirname,
-        proxy:{
-            '/mock/admin/v1*':{
-                target: 'http://192.168.0.30/mockjsdata/5',
-                rewrite : function(req){
-                    req.url = req.url.replace(/^\/mock/,'');
-                    console.log(req.url);
-                },
-                changeOrigin: true,
-                secure: false
-            },
-            '/management*':{
-                target: 'http://192.168.0.30/mockjsdata/11',
-                rewrite : function(req){
-                    req.url = req.url.replace(/^\/management/,'');
-                    console.log(req.url);
-                },
-                changeOrigin: true,
-                secure: false
-            },
-            '/dev*':{
-                target: 'http://ssp.test',
-                rewrite : function(req){
-                    req.url = req.url.replace(/^\/dev/,'');
-                },
-                changeOrigin: true,
-                secure: false
-            }
-        }
     }
 };
 
