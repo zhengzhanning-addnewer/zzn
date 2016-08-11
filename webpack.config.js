@@ -13,7 +13,7 @@ var config = {
         //publicPath: path.join (__dirname+ "public")
     },
     entry:{
-     /*   comm: ['jquery','angular','angular-ui-router','angular-animate','moment'],*/
+        comm: ['jquery','angular','angular-ui-router','angular-animate','moment'],
         //app: ['webpack/hot/dev-server', path.join(__dirname, '/src/js/app.js')]
         app: './src/js/app.js'
     },
@@ -84,7 +84,8 @@ var config = {
         new ExtractTextPlugin('index.css'),
         new HtmlWebpackPlugin({
             template: './views/index.html',
-            filename: './index.html',
+            filename: __dirname +'/index.html',
+            chunks:['comm','app'],
             inject: true
         })
     ],

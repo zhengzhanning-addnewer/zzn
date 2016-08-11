@@ -1,0 +1,72 @@
+<div>
+  <!--<input type="text" ng-model="expr" placeholder="Enter an expression">
+  <h2>{{expr | lowercase  | capitalize}}</h2>
+  <div class="container">
+    <form action="" name="signup_form" novalidate-submit="signupForm()">
+      <fieldset>
+        <legend>Signup</legend>
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Your name</label>
+            <input type="text" placeholder="Name" name="name" ng-model="signup.name" ng-minlength="3" ng-maxlength="20" required />
+            <div class="error" ng-message="signup_form.name.$error">
+            	<div ng-message="required">bixutianxie</div>
+            	<div ng-message="minlength">bunengshaoyu3ge</div>
+            	<div ng-message="maxlength">bunengdayu20ge</div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn radius">Submit</button>
+      </fieldset>
+    </form>
+  </div>
+  <qdirective my-url="{{ahref.hrefs}}" my-link-text="{{ahref.names}}"></qdirective>
+  <input type="text" ng-model="btn" placeholder="text">
+  <button type="button" ng-disabled="!btn"> button</button>
+  <textarea id="" cols="30" rows="10" ng-disabled="isDisabled">textarea</textarea>
+  Type here to make sibling readonly:
+  <input type="text" ng-model="someProperty" velue="false"/><br/>
+  <input type="text"
+         ng-readonly="someProperty"
+         value="Some text here"/>
+  <label>someProperty = {{someProperty}}</label>
+  <input type="checkbox"
+         ng-checked="someProperty"
+         ng-init="someProperty = true"
+         ng-model="someProperty">
+  <label>Select Two Fish:</label>
+  <input type="checkbox"
+         ng-model="isTwoFish"><br/>
+  <select>
+    <option>One Fish</option>
+    <option ng-selected="isTwoFish">Two Fish</option>
+  </select>-->
+  <div ng-controller="SomeController">
+    {{ someBareValue }}
+    <button ng-click="someAction()">Communicate to child</button>
+    <div ng-controller="ChildController">
+      {{ someBareValue }}
+      <button ng-click="childAction()">Communicate to parent</button>
+    </div>
+  </div>
+  <div>2</div>
+  <div ng-controller="SomeController">
+    {{ someModel.someValue }}
+    <button ng-click="someAction()">Communicate to child</button>
+    <div ng-controller="ChildController">
+      {{ someModel.someValue }}
+      <button ng-click="childAction()">Communicate to parent</button>
+    </div>
+  </div>
+  <input type="text" ng-model="person.name"/>
+  <div ng-switch on="person.name">
+    <p ng-switch-default>And the winner is</p>
+    <h1 ng-switch-when="Ari">{{ person.name }}</h1>
+  </div>
+  <input type="text" ng-model="asd.dsa" value="true">
+  <div ng-init="asd.dsa = true" ng-show="asd.dsa === true">
+    ng-bind="asd.dsa"
+    {{asd.dsa}}
+  </div>
+  <!--<div ng-include="includes.html"></div>-->
+</div>

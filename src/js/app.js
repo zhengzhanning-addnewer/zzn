@@ -17,10 +17,13 @@ import 'angular';
 import 'angular-ui-router';
 import './service';
 import './dreck';
+import './directives'
+
 let app = angular.module('app', [
-    'ui.router',
     'service',
-    'dreck'
+    'dreck',
+    'ui.router',
+    'myDirective'
     ]);
 
 app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider,$locationProvider) {
